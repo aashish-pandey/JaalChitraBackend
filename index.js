@@ -42,7 +42,7 @@ const saveGlobalChat = require('./controllers/SaveGlobalChat')
 const getGlobalChat = require('./controllers/GetGlobalChat')
 const deleteAdmin = require('./controllers/AdminSideAdminFuncionalities/DeleteAdmin')
 const deleteMovie = require('./controllers/AdminSideAdminFuncionalities/DeleteMovie')
-const deleteUser = require('./controllers/AdminSideAdminFuncionalities/DeleteUSer')
+const deleteUser = require('./controllers/AdminSideAdminFuncionalities/DeleteUser')
 const editAdmin = require('./controllers/AdminSideAdminFuncionalities/EditAdmin')
 const changeAdminDepartment = require('./controllers/AdminSideAdminFuncionalities/ChangeAdminDepartment')
 const { sendMail } = require('./MailHandler/SendMail')
@@ -61,12 +61,13 @@ app.use(cookieParser())
 app.use(cors())
 app.use(bodyParser.json())
 
+const port = process.env.PORT || 3560
 
 const dbURI = 'mongodb+srv://aashish:aashish@cluster0.ue3jr5n.mongodb.net/Users?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI)
     .then(()=>
-        app.listen(3560, function(){
+        app.listen(port, function(){
             console.log("Authentication system is running")
         })
     )
