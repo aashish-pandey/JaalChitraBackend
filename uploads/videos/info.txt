@@ -1,0 +1,1 @@
+video files that are to be served in website are stored in this file. Due to copyright issues and large size we cannot provide viseo files. So, while trying to run video the ap may show unexpected error like resource not found and may be possible that node app may get crashed.
